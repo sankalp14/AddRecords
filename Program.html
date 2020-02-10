@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, td {
+  border: 1px solid black;
+}
+</style>
+</head>
+<body>
+
+<p>Add Record</p>
+
+<input type="text" id="t1">
+<button onclick="add()" id="t2">Add</button>
+
+<table id="myTable">
+  
+    <td><button type="button" onclick="Delete()">Delete</button></td>
+
+
+</table>
+<br>
+
+<script>
+function add()
+{
+  var table = document.getElementById("myTable");
+  var row = table.insertRow(0);
+  var cell1 = row.insertCell(0);
+  var x = document.getElementById("t1").value;
+
+  cell1.innerHTML = x;
+}
+
+
+function Delete()
+{
+  document.getElementById("myTable").deleteRow(0);
+}
+
+</script>
+
+</body>
+</html>
