@@ -23,6 +23,8 @@ table, td {
 <br>
 
 <script>
+
+
 function add()
 {
   var table = document.getElementById("myTable");
@@ -31,6 +33,7 @@ function add()
   var x = document.getElementById("t1").value;
   // console.log(row);
   cell1.innerHTML = x;
+  document.getElementById("t1").value = "";
 
 
   cell = row.insertCell(-1);
