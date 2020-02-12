@@ -2,24 +2,24 @@
 <html>
 <head>
 <style>
+
 table, td {
   border: 1px solid black;
 }
+
 </style>
 </head>
 <body>
 
 <p>Add Record</p>
 
-<input type="text" id="t1">
+<input type="text" id="t1" required>
 <button onclick="add()" id="t2">Add</button>
 
 <table id="myTable">
-  
-    <td><button type="button" onclick="Delete()">Delete</button></td>
-
 
 </table>
+
 <br>
 
 <script>
@@ -29,15 +29,28 @@ function add()
   var row = table.insertRow(0);
   var cell1 = row.insertCell(0);
   var x = document.getElementById("t1").value;
-
+  // console.log(row);
   cell1.innerHTML = x;
+
+
+  cell = row.insertCell(-1);
+  var btnRemove = document.createElement("INPUT");
+  btnRemove.type = "button";
+  btnRemove.value = "Remove";
+  btnRemove.setAttribute("onclick", "Remove(this);");
+  cell.appendChild(btnRemove);
+  // console.log(row);
+
 }
 
 
-function Delete()
+function Remove(button)
 {
-  document.getElementById("myTable").deleteRow(0);
+    var row = button.parentNode.parentNode;
+    var table = document.getElementById("myTable");
+    table.deleteRow(row.rowIndex);
 }
+
 
 </script>
 
